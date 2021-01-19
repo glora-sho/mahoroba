@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>天気予報</title>
+</head>
+<body>
+    <h1>川崎市周辺の3時間毎の天気予報</h1>
+    <table border="1">
+        <tr th:each="forecast : ${forecasts}">
+            <td th:text="${forecast.date}"></td>
+            <td><img th:src="${forecast.icon}" /></td>
+            <td th:text="${forecast.weather}"></td>
+        </tr>
+    </table>
+</body>
+</html>
